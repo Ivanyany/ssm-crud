@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- 为实体类指定别名 -->
+	<typeAliases>
+		<package name="com.ivan.ssm.domain"/>
+	</typeAliases>
+		
+	<plugins>
+    	<!-- pageHelper分页查询 -->
+    	<plugin interceptor="com.github.pagehelper.PageInterceptor">
+    		<!-- 分页合理化:不查询负数页 -->
+    		<property name="reasonable" value="true"/>
+    	</plugin>
+	</plugins>
+	
+	<!-- 注册mapper映射文件 -->
+	<mappers>
+		<package name="com.ivan.ssm.mapper"/>
+	</mappers>
+	
+</configuration>
